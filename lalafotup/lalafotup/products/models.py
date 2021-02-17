@@ -11,4 +11,4 @@ class RuralGovernment(models.Model):
 class Village(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField(blank=True, null=True)
-    ruralgoverment = models.ForeignKey(RuralGovernment,on_delete=models.SET_NULL,null=Truea)
+    ruralgovernment = models.ForeignKey(RuralGovernment,on_delete=models.SET_NULL,null=True)
