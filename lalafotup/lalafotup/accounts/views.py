@@ -14,7 +14,7 @@ def register_page(request):
             user.save()
             return redirect('home')
     context = {"form": form}
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'my_accs/register.html', context)
 
 
 def sign_in(request):
@@ -24,4 +24,4 @@ def sign_in(request):
         user = authenticate(request, usernsme=username, password=password)
         login(request, user)
         return redirect('home')
-    return render(request, 'accounts/login.html')
+    return render(request, 'my_accs/login.html')
