@@ -1,3 +1,5 @@
 {% for rural_government in rural_governments %}
-    {{ rural_government.name }}
+
+<a href="{% url 'villages' rural_government.id %}">{{ rural_government.name }}</a>
+
 {% endfor %}
