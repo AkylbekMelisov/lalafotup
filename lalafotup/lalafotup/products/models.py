@@ -7,30 +7,41 @@ class RuralGovernment(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Village(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField(blank=True, null=True)
-    ruralgovernment = models.ForeignKey(RuralGovernment,on_delete=models.CASCADE,null=True)
+    ruralgovernment = models.ForeignKey(RuralGovernment, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
-    sub_categories = (
-        ('car','car'),
-        ('trucks','trucks'),
-        ('chicken','chicken'),
-        ('duck','duck'),
-        ('goose','goose'),
-        ('turkey','turkey'),
-    )
     name = models.CharField(max_length=40)
-    description = models.TextField(blank=True,null=True)
-    sub_category = models.CharField(max_length=40,choices=sub_categories)
-    category = models.ForeignKey('Category',on_delete=models.CASCADE,null=True)
-    date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField()
+    description = models.TextField(blank=True, null=True)
+    subcategory = models.ForeignKey('SubCategory', on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
     name = models.CharField(max_length=40)
-    village = models.ForeignKey(Village,on_delete=models.CASCADE,null=True)
+    village = models.ForeignKey(Village, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class SubCategory(models.Model):
+    name = models.CharField(max_length=40)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

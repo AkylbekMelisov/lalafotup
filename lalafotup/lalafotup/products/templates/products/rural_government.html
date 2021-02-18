@@ -1,3 +1,7 @@
+<a href="{% url 'sign_up' %}">Sign Up</a>
+<hr>
+<a href="{% url 'sign_in' %}">Sign In</a><br>
+<hr>
 {% for rural_government in rural_governments %}
 
 <a href="{% url 'villages' rural_government.id %}">{{ rural_government.name }}</a>
