@@ -5,7 +5,7 @@ from django.db import models
 
 class RuralGovernment(models.Model):
     name = models.CharField(max_length=40)
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class RuralGovernment(models.Model):
 
 class Village(models.Model):
     name = models.CharField(max_length=40)
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     ruralgovernment = models.ForeignKey(RuralGovernment, on_delete=models.CASCADE)
 
@@ -35,7 +35,7 @@ class Product(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=40)
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
     village = models.ForeignKey(Village, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -44,7 +44,7 @@ class Category(models.Model):
 
 class SubCategory(models.Model):
     name = models.CharField(max_length=40)
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
