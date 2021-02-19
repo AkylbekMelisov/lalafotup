@@ -1,3 +1,22 @@
-{% for village in villages%}
-<a href="{% url 'category' village.id %}">{{ village.name }}</a>
-{% endfor %}
+{% extends 'products/base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/village.css' %}" type="text/css">
+
+<div class="wrapper rounded bg-white">
+    <hr>
+    {% for village in villages%}
+    <div class="row px-sm-2 px-0 pt-3">
+        <div class="col-md-4 offset-md-0 offset-sm-2 offset-1 col-sm-8 col-10 offset-sm-2 offset-1 mb-3">
+            <div class="card">
+                <div class="d-flex justify-content-center"> <img src="{{ village.image.url }}" class="product" alt="" width="200"> </div>
+                <br>
+                    <h3 class="d-flex justify-content-center"><a href="{% url 'category' village.id %}">{{ village.name }}</a></h3>
+                </b>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

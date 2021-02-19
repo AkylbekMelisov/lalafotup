@@ -1,3 +1,21 @@
-{% for category in categories %}
-<a href="{% url 'subcategory' category.id %}">{{ category.name }}</a>
-{% endfor %}
+{% extends 'products/base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/category.css' %}" type="text/css">
+
+<div class="wrapper rounded bg-white">
+    <hr>
+    {% for category in categories %}
+    <div class="row px-sm-2 px-0 pt-3">
+        <div class="col-md-4 offset-md-0 offset-sm-2 offset-1 col-sm-8 col-10 offset-sm-2 offset-1 mb-3">
+            <div class="card">
+                <div class="d-flex justify-content-center"> <img src="{{ category.image.url }}" class="product" alt="" width="200"> </div> <b class="px-2"><br>
+                    <h3 class="d-flex justify-content-center"><a href="{% url 'subcategory' category.id %}">{{ category.name }}</a></h3>
+                </b>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

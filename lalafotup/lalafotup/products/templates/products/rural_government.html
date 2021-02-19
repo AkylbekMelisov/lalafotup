@@ -1,9 +1,22 @@
-<a href="{% url 'sign_up' %}">Sign Up</a>
-<hr>
-<a href="{% url 'sign_in' %}">Sign In</a><br>
-<hr>
-{% for rural_government in rural_governments %}
+{% extends 'products/base.html' %}
+{% block content %}
+{% load static %}
 
-<a href="{% url 'villages' rural_government.id %}">{{ rural_government.name }}</a>
+<link rel="stylesheet" href="{% static 'css/rural_government.css' %}" type="text/css">
 
-{% endfor %}
+<div class="wrapper rounded bg-white">
+    <hr>
+    {% for rural_government in rural_governments %}
+    <div class="row px-sm-2 px-0 pt-3">
+        <div class="col-md-4 offset-md-0 offset-sm-2 offset-1 col-sm-8 col-10 offset-sm-2 offset-1 mb-3">
+            <div class="card">
+                <div class="d-flex justify-content-center"> <img src="{{ rural_government.image.url}}" class="product" alt="" width="200"> </div>
+                <br>
+                    <h3 class="d-flex justify-content-center"><a href="{% url 'villages' rural_government.id %}">{{ rural_government.name }}</a></h3>
+                </b>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
