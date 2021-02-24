@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
@@ -21,7 +21,12 @@ def sign_in(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, usernsme=username, password=password)
+        user = authenticate(request, username=username, password=password)
         login(request, user)
         return redirect('home')
     return render(request, 'my_accs/login.html')
+
+
+def logout_page(request):
+    logout(request)
+    return redirect('home')
