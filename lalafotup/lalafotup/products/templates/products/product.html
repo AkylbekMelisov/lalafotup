@@ -6,6 +6,7 @@
 
 <div class="wrapper rounded bg-white">
     <hr>
+    <a href="{% url 'create_product' sub_id %}">Add product</a>
     {% for product in products %}
     <div class="row px-sm-2 px-0 pt-3">
         <div class="col-md-4 offset-md-0 offset-sm-2 offset-1 col-sm-8 col-10 offset-sm-2 offset-1 mb-3">
@@ -21,3 +22,4 @@
     {% endfor %}
 </div>
 {% endblock %}
+

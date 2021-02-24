@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
+from .forms import ProductForm
 from .models import *
 
 
@@ -20,7 +21,7 @@ def village_page(request, government_id):
 def product_page(request, subcategory_id):
     subcategory = SubCategory.objects.get(id=subcategory_id)
     product = subcategory.product_set.all()
-    context = {'products': product}
+    context = {'products': product, 'sub_id': subcategory.id}
     return render(request, 'products/product.html', context)
 
 
@@ -36,3 +37,17 @@ def sub_category(request, category_id):
     subcategory = category.subcategory_set.all()
     context = {'subcategories': subcategory}
     return render(request, 'products/subcategory.html', context)
+
+
+def create_product_page(request, subcategory_id):
+    subcategory = SubCategory.objects.get(id=subcategory_id)
+    product = subcategory.product_set.all()
+    form = ProductForm(initial={'subcategory': subcategory})
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('products', subcategory.id)
+    context = {'products': product, 'form': form}
+    return render(request, 'products/create_product.html', context)
