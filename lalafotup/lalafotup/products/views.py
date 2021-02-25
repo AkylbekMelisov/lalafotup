@@ -45,7 +45,6 @@ def create_product_page(request, subcategory_id):
     form = ProductForm(initial={'subcategory': subcategory})
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
-        print(request.POST)
         if form.is_valid():
             form.save()
             return redirect('products', subcategory.id)
@@ -66,3 +65,15 @@ def delete_my_product(request, product_id):
         return redirect('my_product')
     context = {'products': product}
     return render(request, 'products/delete_product.html', context)
+
+
+def edit_my_product(request, product_id):
+    product = Product.objects.get(id=product_id)
+    form = ProductForm(instance=product)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES,instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('products', product.id)
+    context = {'products': product, 'form': form}
+    return render(request, 'products/edit_product.html', context)
