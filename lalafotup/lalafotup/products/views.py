@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from .filter import ProductFilter
 from .forms import ProductForm
 from .models import *
 
@@ -21,7 +22,9 @@ def village_page(request, government_id):
 def product_page(request, subcategory_id):
     subcategory = SubCategory.objects.get(id=subcategory_id)
     product = subcategory.product_set.all()
-    context = {'products': product, 'sub_id': subcategory.id}
+    filters = ProductFilter(request.GET, queryset=product)
+    product = filters.qs
+    context = {'products': product, 'sub_id': subcategory.id, 'filter': filters}
     return render(request, 'products/product.html', context)
 
 
