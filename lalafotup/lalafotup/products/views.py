@@ -57,3 +57,12 @@ def my_product(request):
     product = Product.objects.filter(user=request.user)
     context = {'products': product}
     return render(request, 'products/my_product.html', context)
+
+
+def delete_my_product(request, product_id):
+    product = Product.objects.get(id=product_id)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('my_product')
+    context = {'products': product}
+    return render(request, 'products/delete_product.html', context)
