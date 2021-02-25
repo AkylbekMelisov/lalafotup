@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -31,12 +32,14 @@ class Village(models.Model):
 
 
 class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=40, verbose_name='Названия')
     image = models.ImageField(verbose_name='Картика')
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
     subcategory = models.ForeignKey('SubCategory', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     phone = models.IntegerField()
+    price = models.IntegerField()
 
     def __str__(self):
         return self.name
