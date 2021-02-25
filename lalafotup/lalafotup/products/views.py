@@ -74,6 +74,6 @@ def edit_my_product(request, product_id):
         form = ProductForm(request.POST, request.FILES,instance=product)
         if form.is_valid():
             form.save()
-            return redirect('products', product.id)
+            return redirect('products', product.subcategory.id)
     context = {'products': product, 'form': form}
     return render(request, 'products/edit_product.html', context)
