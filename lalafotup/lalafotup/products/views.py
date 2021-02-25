@@ -51,3 +51,9 @@ def create_product_page(request, subcategory_id):
             return redirect('products', subcategory.id)
     context = {'products': product, 'form': form}
     return render(request, 'products/create_product.html', context)
+
+
+def my_product(request):
+    product = Product.objects.filter(user=request.user)
+    context = {'products': product}
+    return render(request, 'products/my_product.html', context)
