@@ -11,10 +11,10 @@
                 <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-<!--        <form class="form-inline my-2 my-lg-0" action="" method="GET">-->
-<!--            {{ filter.form }}-->
-<!--            <input class="btn btn-outline-success my-2 my-sm-0" type="submit">-->
-<!--        </form>-->
+        <form class="form-inline my-2 my-lg-0" action="" method="GET">
+            {{ filter.form }}
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        </form>
         {% if request.user.is_authenticated %}
         <p>Hello, {{request.user}}</p>
         <a href="{% url 'logout' %}">Logout</a>

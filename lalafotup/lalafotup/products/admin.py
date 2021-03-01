@@ -7,7 +7,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(RuralGovernment)
 admin.site.register(Village)
-admin.site.register(Product,ProductAdmin)
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Image)
 
 class ProductInline(admin.TabularInline):
     model = Product
