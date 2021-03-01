@@ -22,13 +22,9 @@ def village_page(request, government_id):
 def product_page(request, subcategory_id):
     subcategory = SubCategory.objects.get(id=subcategory_id)
     product = subcategory.product_set.all()
-    images = []
-    for prod in product:
-        images.append(Image.objects.filter(product_id=prod.id))
-    image = images[0][0]
     filters = ProductFilter(request.GET, queryset=product)
     product = filters.qs
-    context = {'products': product, 'sub_id': subcategory.id, 'filter': filters,'image':image}
+    context = {'products': product, 'sub_id': subcategory.id, 'filter': filters}
     return render(request, 'products/product.html', context)
 
 
@@ -92,16 +88,3 @@ def show_product(request, product_id):
     product = Product.objects.get(id=product_id)
     context = {'product': product}
     return render(request, 'products/show_product.html', context)
-
-
-def image_page(request, product_id):
-    product = Product.objects.get(id=product_id)
-    images = product.image_set.all()
-    form = ImageForm(initial={'product': product})
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-
-    context = {'form': form, 'product': product, 'images': images}
-    return render(request, 'products/imageform.html', context)

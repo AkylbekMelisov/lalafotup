@@ -34,6 +34,7 @@ class Village(models.Model):
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=40, verbose_name='Названия')
+    image = models.ImageField(blank=True, null=True)
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
     subcategory = models.ForeignKey('SubCategory', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -72,8 +73,3 @@ class SubCategory(models.Model):
     class Meta:
         verbose_name = 'Подкатегория'
         verbose_name_plural = 'Подкатегория'
-
-
-class Image(models.Model):
-    img = models.ImageField(blank=True, null=True)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)

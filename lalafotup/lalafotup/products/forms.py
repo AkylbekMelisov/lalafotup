@@ -9,10 +9,4 @@ register_forms = UserCreationForm()
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'price', 'phone', 'subcategory', 'description']
-
-
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model = Image
-        fields = ['product', 'img']
+        fields = ['name', 'price', 'image', 'phone', 'subcategory', 'description', ]
