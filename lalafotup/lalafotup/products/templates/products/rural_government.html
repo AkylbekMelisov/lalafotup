@@ -10,8 +10,8 @@
         {% for rural_government in rural_governments %}
         <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top" src="{{ rural_government.image.url}}" alt="Card image cap" width="200"
-                     height="300">
+                <a href="{% url 'villages' rural_government.id %}"><img class="card-img-top" src="{{ rural_government.image.url}}" alt="Card image cap" width="200"
+                     height="300"></a>
                 <div class="card-body">
                     <h3 class="d-flex justify-content-center"><a href="{% url 'villages' rural_government.id %}">{{rural_government.name }}</a></h3>
                 </div>
