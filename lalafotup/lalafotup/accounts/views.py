@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
@@ -22,8 +23,11 @@ def sign_in(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-        login(request, user)
-        return redirect('home')
+        try:
+            login(request, user)
+            return redirect('home')
+        except:
+            return HttpResponse("У Вас не достаточно прав!!! Активируйте свой аккаунт!")
     return render(request, 'my_accs/login.html')
 
 
