@@ -25,7 +25,7 @@ SECRET_KEY = '9yw4fi&!a$!uf*k8(b7-2dtka*&h+--scok1#ld6th63sa2(4$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['167.99.248.123']
+ALLOWED_HOSTS = ['197.99.248.123']
 
 
 # Application definition
@@ -79,15 +79,14 @@ WSGI_APPLICATION = 'lalafotup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lalafotup_db',
-	'USER': 'akylbek',
-	'PASSWORD': 'asdf313233',
+        'NAME': 'myproject',
+	'USER': 'myprojectuser',
+	'PASSWORD': 'password',
 	'HOST': 'localhost',
-	'PORT': 5432
+	'PORT': 5432,
     }
 }
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -125,6 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
