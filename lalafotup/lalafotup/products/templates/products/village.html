@@ -9,7 +9,7 @@
         {% for village in villages %}
         <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top" src="{{ village.image.url }}" alt="Card image cap" width="200" height="300">
+                <a href="{% url 'category' village.id %}"><img class="card-img-top" src="{{ village.image.url }}" alt="Card image cap" width="200" height="300"></a>
                 <div class="card-body">
                     <h3 class="d-flex justify-content-center"><a href="{% url 'category' village.id %}">{{ village.name}}</a></h3>
                 </div>
