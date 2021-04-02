@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0466cce-986b-4736-a2f0-229fba637d56" name="Default Changelist" comment="aaa">
-      <change beforePath="$PROJECT_DIR$/lalafotup/products/templates/products/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/products/templates/products/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lalafotup/products/templates/products/rural_government.html" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/products/templates/products/rural_government.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lalafotup/products/templates/products/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/products/templates/products/show_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lalafotup/products/templates/products/subcategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/products/templates/products/subcategory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lalafotup/products/templates/products/village.html" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/products/templates/products/village.html" afterDir="false" />
+    <list default="true" id="c0466cce-986b-4736-a2f0-229fba637d56" name="Default Changelist" comment="delete button">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lalafotup/lalafotup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/lalafotup/lalafotup/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,42 @@
       <option name="project" value="LOCAL" />
       <updated>1617021315778</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wrap in a link teg image">
+      <created>1617038085435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617038085435</updated>
+    </task>
+    <task id="LOCAL-00005" summary="wrap in a link teg image">
+      <created>1617038101107</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617038101107</updated>
+    </task>
+    <task id="LOCAL-00006" summary="wrap in a link teg image">
+      <created>1617038120383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617038120383</updated>
+    </task>
+    <task id="LOCAL-00007" summary="wrap in a link teg image">
+      <created>1617038127477</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617038127477</updated>
+    </task>
+    <task id="LOCAL-00008" summary="delete button">
+      <created>1617038176215</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1617038176215</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -85,6 +117,8 @@
     <MESSAGE value="change function show my product" />
     <MESSAGE value="add try:, exept: for login" />
     <MESSAGE value="aaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aaa" />
+    <MESSAGE value="wrap in a link teg image" />
+    <MESSAGE value="delete button" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete button" />
   </component>
 </project>

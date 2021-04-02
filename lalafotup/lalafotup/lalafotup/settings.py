@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lalafotup_db',
-	'USER': 'akylbek',
-	'PASSWORD': 'asdf313233',
-	'HOST': 'localhost',
-	'PORT': 5432
+        'USER': 'akylbek',
+        'PASSWORD': 'asdf313233',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 STATIC_URL = '/static/'
